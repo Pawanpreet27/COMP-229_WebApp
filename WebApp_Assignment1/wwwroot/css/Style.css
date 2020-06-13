@@ -1,0 +1,132 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: rgb(51, 53, 58) !important;
+}
+h5 {
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.button {
+    background-color: #ff0000 
+    color: black;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top:30px;
+    font-size: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 50px;
+    border-radius: 33px;
+}
+
+
+#service-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#portfolio-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#portfolio_content {
+    text-align: left;
+
+    height: auto;
+}
+.mainSection {
+    text-align: center;
+    vertical-align: middle;
+    align-self: center;
+    height:auto;
+}
+
+#labelStyle {
+    color: white;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    resize: vertical;
+}
+
+input[type=message], select, textarea {
+    width: 100%;
+    padding: 8px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+#row-flex {
+    display: flex;
+}
+
+.row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.actionTag{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.col_style{
+    text-align:center;
+    align-content:center;
+}
+
+
+table{
+    color:white;
+    padding:10px;
+    margin:10px;
+}
+
+td{
+    padding:10px;
+}
+
+th{
+    padding:10px
+}
+
+hr{
+    background-color:white;
+}
