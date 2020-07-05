@@ -1,14 +1,17 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model HomeModel
+
+@*Razor Code Block if layout= null*@
+@*Comment this section because this can be handled by ViewStart.chtml file*@
+@*@{
+        Layout = "_Layout";
+}*@
 
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment1</title>
-    <link  rel="stylesheet" href="@Url.Content("~/css/Style.css")"  type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/css/Style.css")" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -18,19 +21,19 @@
         <div class="col">
             <div class="mainSection">
                 <br />
-                <img id="service-pic" src="~/Images/arnold-francisca-3uA-fTfb3Es-unsplash.jpg" />
+                <img id="service-pic" src="@Url.Content("~/Images/" + Model.ImageName)" />
                 <br />
-                <h1>My Blog</h1>
+                <h1>@Model.Name</h1>
                 <br />
-                <h5>I am a Full Stack Developer & Designer who has a knack for creatively solving problems. I have more than 2+ years of experience in native Mobile Application development. I have experience working with large and small companies to create, fix and maintain apps for them.</h5>
+                <h5>@Model.Desscription</h5>
                 <br />
                 @* asp-action will connect to another page *@
-                <div class="mainSection">
-                    <a class="actionTag" asp-action="Portfolio">View Portfolio</a>
-                    <a class="actionTag" asp-action="ContactMe">Contact Me</a>
-                </div>
+                @*<div class="mainSection">
+                        <a class="actionTag" asp-action="Portfolio">View Portfolio</a>
+                        <a class="actionTag" asp-action="ContactMe">Contact Me</a>
+                    </div>*@
             </div>
-        </div>  
+        </div>
 
     </div>
 </body>

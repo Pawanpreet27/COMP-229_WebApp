@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApp_Assignment1.Models;
 
 namespace WebApp_Assignment1.Controllers
@@ -17,13 +11,23 @@ namespace WebApp_Assignment1.Controllers
             return View("Home");
         }
 
+        public ViewResult Home() 
+        {
+            HomeModel homeModel = new HomeModel();
+            {
+                homeModel.Desscription = "I am a Full Stack Developer & Designer who has a knack for creatively solving problems. I have more than 2+ years of experience in native Mobile Application development. I have experience working with large and small companies to create, fix and maintain apps for them.";
+                homeModel.ImageName = "arnold-francisca-3uA-fTfb3Es-unsplash.jpg";
+                homeModel.Name = "My Blog";
+            };
+            return View(homeModel);
+        }
+
+
         [HttpGet]
         public ViewResult ContactMe()
         {
             return View();
         }
-
-
 
         [HttpPost]
         public ViewResult ContactMe(UResponse uResponse)
@@ -38,7 +42,6 @@ namespace WebApp_Assignment1.Controllers
             }
         }
 
-
         public ViewResult Portfolio()
         {
             return View();
@@ -47,6 +50,11 @@ namespace WebApp_Assignment1.Controllers
         public ViewResult ListofEntries()
         {
             return View(Repository.GetResponses());
+        }
+
+        public ViewResult Privacy()
+        {
+            return View();
         }
     }
 }

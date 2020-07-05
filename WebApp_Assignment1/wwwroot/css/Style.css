@@ -130,3 +130,22 @@ th{
 hr{
     background-color:white;
 }
+
+
+.menu {
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.logo {
+    color: rgb(199, 92, 56);
+    font-size: medium;
+    font-weight: bold;
+}
+
+p {
+    color: white;
+}
