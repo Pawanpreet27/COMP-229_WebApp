@@ -1,5 +1,4 @@
 using System;
-
 namespace WebApp_Assignment1.Models
 {
     public class ErrorViewModel

@@ -1,11 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using WebApp_Assignment1.Models;
 
 namespace WebApp_Assignment1.Controllers
 {
+  
     public class HomeController : Controller
     {
 
+        ApplicationDbContext context;
+
+        public HomeController(ApplicationDbContext ctx)
+        {
+            context = ctx;
+        }
         public ViewResult Index()
         {
             return View("Home");
@@ -32,8 +40,9 @@ namespace WebApp_Assignment1.Controllers
         [HttpPost]
         public ViewResult ContactMe(UResponse uResponse)
         {
-            if (ModelState.IsValid) { 
-                Repository.AddResponse(uResponse);
+            EFUResponseRepository repository = new EFUResponseRepository(context);
+            if (ModelState.IsValid) {
+                repository.SaveProduct(uResponse);
                 return View("ThanksUI", uResponse);
             }
             else
@@ -42,19 +51,23 @@ namespace WebApp_Assignment1.Controllers
             }
         }
 
+        public ViewResult ListofEntries()
+        {
+            EFUResponseRepository repository = new EFUResponseRepository(context);
+            return View(repository.uResponses);
+        }
+
         public ViewResult Portfolio()
         {
             return View();
         }
 
-        public ViewResult ListofEntries()
-        {
-            return View(Repository.GetResponses());
-        }
-
+       
         public ViewResult Privacy()
         {
             return View();
         }
+
+       
     }
 }

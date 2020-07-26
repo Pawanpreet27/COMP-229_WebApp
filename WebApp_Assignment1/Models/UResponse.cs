@@ -3,6 +3,9 @@ namespace WebApp_Assignment1.Models
 {
     public class UResponse
     {
+        [Key]
+        public int UResponsesID { get; set; }
+
         [Required(ErrorMessage ="Please enter your Name")]
         public string Name { get; set; }
 
