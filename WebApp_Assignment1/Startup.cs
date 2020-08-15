@@ -10,13 +10,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using WebApp_Assignment1.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApp_Assignment1
 {
     public class Startup
     {
-
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,8 +29,15 @@ namespace WebApp_Assignment1
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration["Data:Portfolio:ConnectionString"]));
-            services.AddTransient<IContactsRepo, EFUResponseRepository>();
 
+            services.AddDbContext<AppIdentityDbContext>(options =>
+          options.UseSqlServer(Configuration["Data:UserIdentity:ConnectionString"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+              .AddEntityFrameworkStores<AppIdentityDbContext>()
+                 .AddDefaultTokenProviders();
+
+            services.AddTransient<IContactsRepo, EFUResponseRepository>();
             services.AddControllersWithViews();
         }
 
@@ -55,6 +61,8 @@ namespace WebApp_Assignment1
 
             app.UseAuthorization();
 
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -62,6 +70,7 @@ namespace WebApp_Assignment1
                     pattern: "{controller=Home}/{action=Home}/{id?}");
             });
            SeedData.EnsurePopulated(app);
+           IdentitySeedData.EnsurePopulated(app);
         }
     }
 }

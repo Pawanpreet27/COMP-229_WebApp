@@ -1,0 +1,44 @@
+﻿
+@model WebApp_Assignment1.Models.LoginResponse
+
+@{
+    Layout = "_Layout";
+
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/Style.css")" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <form asp-action="Login" method="post" asp-controller="Account">
+
+        <div class="container">
+            <div class="col">
+
+                <h1 style="font-weight: bold;">Admin Login</h1>
+                <hr />
+                <div style="color:red;" asp-validation-summary="All"></div>
+                <div class="row" id="row-flex">
+                    <input type="hidden" asp-for="ReturnUrl" />
+                    <div class="col">
+                        <label id="labelStyle" asp-for="EmailID">Email-ID</label>
+                        <input type="text" id="email" asp-for="EmailID" placeholder="Your Email-ID..">
+
+                        <label id="labelStyle" asp-for="Password">Password</label>
+                        <input type="text" id="mobileNo" asp-for="Password" placeholder="Your Password..">
+
+                        <button class="button" type="submit"> SUBMIT </button>
+                    </div>
+                </div>
+            </div>
+
+    </form>
+
+</body>
+</html>

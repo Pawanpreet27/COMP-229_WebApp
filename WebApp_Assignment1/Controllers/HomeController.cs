@@ -68,6 +68,5 @@ namespace WebApp_Assignment1.Controllers
             return View();
         }
 
-       
     }
 }
