@@ -37,7 +37,7 @@ namespace WebApp_Assignment1.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = await userManager.FindByNameAsync(loginModel.EmailID);
+                IdentityUser user = await userManager.FindByNameAsync(loginModel.Username);
                 if (user != null)
                 {
                     await signInManager.SignOutAsync();

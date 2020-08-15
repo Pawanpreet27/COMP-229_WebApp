@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <form asp-action="ContactMe" method="post">
     <div class="container">
         <br />
         <h1 style="font-weight: bold;">List of all people who contacted us</h1>
@@ -24,6 +25,7 @@
                     <th>Email</th>
                     <th>Phone Number</th>
                     <th>Message</th>
+                
                 </tr>
               
             </thead>
@@ -33,17 +35,33 @@
 
                 @foreach (var r in Model)
                 {
-                    <tr>
-                        <td>@r.Name</td>
-                        <td>@r.EmailID</td>
-                        <td>@r.PhoneNumber</td>
-                        <td>@r.Message</td>
-                    </tr>
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.EmailID</td>
+                    <td>@r.PhoneNumber</td>
+                    <td>@r.Message</td>
+
+                
+                    <td class="text-center">
+                        <form asp-action="Delete" method="post" asp-route-responseId="@r.UResponsesID">
+                            <a asp-action="EditContactInfo" class="btn btn-sm btn-warning"
+                               asp-route-responseId="@r.UResponsesID">
+                                Edit
+                            </a>
+                           
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+
+                </tr>
                 }
 
             </tbody>
         </table>
 
     </div>
+        </form>
 </body>
 </html>

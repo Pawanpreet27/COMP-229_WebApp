@@ -1,13 +1,13 @@
 ﻿@*Comment this section because this can be handled by ViewStart.chtml file*@
 @*@{
-        Layout = "_Layout";
- }*@
+           Layout = "_Layout";
+    }*@
 
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you</title>
+    <title>Error</title>
     <link rel="stylesheet" href="@Url.Content("~/css/Style.css")" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,12 +18,12 @@
         <div class="col">
             <div class="mainSection">
                 <br />
-                <img id="service-pic" src="~/Images/thanks.jpg" />
+                <img id="service-pic" src="~/Images/error.png" />
                 <br />
-                <h1>Thank you for contacting us!</h1>
-                <h5>We will in touch with you soon.</h5>
+                <h1>Authorization Error!</h1>
+                <h5>Please Login First</h5>
                 <br />
-              
+                <a class="ext-dark" asp-area="" asp-controller="Account" asp-action="Login">Admin Login</a>
             </div>
         </div>
 

@@ -25,10 +25,7 @@ namespace WebApp_Assignment1.Models
             if (user == null)
             {
                 await userManager.CreateAsync(new IdentityUser("Admin"), adminPassword);
-                await userManager.CreateAsync(new IdentityUser("Admin2"), "SomePassw0rd@");
                 await userManager.CreateAsync(new IdentityUser("Admin3"), "NewPassw0rd@");
-                await userManager.CreateAsync(new IdentityUser("Admin4"), "NewAdmin123@");
-                await userManager.CreateAsync(new IdentityUser("Admin5"), "Admin123@");
             }
         }
 

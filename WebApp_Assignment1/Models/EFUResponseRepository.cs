@@ -49,5 +49,11 @@ namespace WebApp_Assignment1.Models
 
             context.SaveChanges();
         }
+
+        public void EditDetails(int UResponsesID)
+        {
+            UResponse dbEntry = context.uResponses.FirstOrDefault(p => p.UResponsesID == UResponsesID);
+        }
+
     }
 }
