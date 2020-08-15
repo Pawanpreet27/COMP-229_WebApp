@@ -10,8 +10,8 @@ using WebApp_Assignment1.Models;
 namespace WebApp_Assignment1.Migrations.AppIdentityDb
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20200815050035_initial")]
-    partial class initial
+    [Migration("20200815192601_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
